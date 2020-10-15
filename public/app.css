@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html {
+  background-color: white;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  color: rgb(66, 69, 86);
+  font-weight: 100;
+  /* background-color: 'white'; */
+}
+
+/* ===================================== HEADER FOOTER =========================================== */
+.header {
+  padding: 10px;
+  display: flex;
+  /* background-color: yellow; */
+}
+
+/* NO NEED TO declare FLEX, child elements of a flex container automatically becomes flexible (flex) items */
+.acklogo {
+  flex: 13%;
+  padding: 10px;
+  /* background-color: tomato; */
+}
+.acktitles {
+  flex: 62%;
+  padding: 10px;
+  /* background-color: violet; */
+}
+.acktitle {
+  font-size: 30px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  /* color: rgba(31, 31, 136, 0.712); */
+  color: #005596;
+}
+
+.currDateTime {
+  flex: 25%;
+  padding: 17px;
+  text-align: right;
+  /* background-color: lightcoral; */
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+}
+/* ===================================================================================== */
+
+/* ===================================== DASHBOARD ===================================== */
+/* ===================================================================================================== */
+.loginContainer,
+.dashContainer {
+  padding: 10px;
+  /* display: flex; */
+  min-height: 75vh;
+  /* background-color: yellow; */
+}
+
+.emptySide {
+  /* flex: 13%; */
+  padding-left: 10px;
+  /* background-color: tomato; */
+}
+
+li {
+  display: inline;
+  padding-right: 10px;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.mainSide {
+  /* flex: 87%; */
+  padding: 10px;
+  flex-direction: column;
+  /* background-color: violet; */
+}
+
+.srchModule,
+.srchDate,
+.reviewValidate {
+  display: none;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  /* border: 1px solid #dddddd; */
+  border: 1px solid #979393;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  /* border: 1px solid #dddddd; */
+  border: 1px solid #979393;
+  text-align: center;
+  padding: 8px;
+}
+
+/* tr:nth-child(even) {
+  background-color: #dddddd;
+} */
+
+.examineeIDSrch {
+  text-align: left;
+  padding: 0.4em 0.4em 0.4em 0;
+  width: 400px;
+  height: 200px;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+}

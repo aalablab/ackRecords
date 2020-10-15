@@ -1,0 +1,161 @@
+<div class="dashContainer">
+  <div class="mainSide">
+    <h2>SEARCH RECORDS</h2>
+
+    <button
+      onclick="showSrchExamineeScr()"
+      id="showSrchExaminee"
+      name="showSrchExaminee"
+    >
+      Search Examinee
+    </button>
+    <button
+      onclick="showSrchModuleScr()"
+      id="showSrchModule"
+      name="showSrchModule"
+    >
+      Search Module
+    </button>
+    <button onclick="showSrchDateScr()" id="showSrchDate" name="showSrchDate">
+      Search Date
+    </button>
+    <button
+      onclick="showExamReviewScr()"
+      id="showExamReview"
+      name="showExamReview"
+    >
+      Review and Validate Exam Records
+    </button>
+    <br /><br />
+
+    <div id="searchExaminee" name="searchExaminee" class="searchExaminee">
+      <form action="/dashboard/searchExaminee" method="POST">
+        <h3>Search by EXAMINEE ID</h3>
+        <label for="examineeIDSrch">Examinee ID:</label><br />
+        <textarea
+          name="examineeIDSrch"
+          id=""
+          cols="30"
+          rows="30"
+          placeholder="12345678, 87654321"
+        ></textarea>
+        <br /><br />
+
+        <button type="submit" id="srchXmnee-btn" class="srchXmnee-btn">
+          SEARCH
+        </button>
+
+        <button type="reset">RESET</button>
+        <button
+          type="submit"
+          id="logout-btn"
+          class="logout-btn"
+          formaction="/dashboard/logout"
+          formmethod="GET"
+        >
+          LOG OUT
+        </button>
+      </form>
+    </div>
+    <div id="srchModule" name="srchModule" class="srchModule">
+      <form action="/dashboard/srchModule" method="POST">
+        <h3>Search by MODULE ID</h3>
+
+        <label for="moduleIDAdd">Module ID:</label><br />
+        <select id="moduleIDAdd" name="moduleIDAdd">
+          <option value="M01">M01</option>
+          <option value="M02">M02</option>
+          <option value="M03">M03</option>
+          <option value="M04-B1">M04-B1</option>
+          <option value="M04-B2">M04-B2</option>
+          <option value="M05-B1">M05-B1</option>
+          <option value="M05-B2">M05-B2</option>
+          <option value="M06">M06</option>
+          <option value="M07A">M07A</option>
+          <option value="M07A-B2">M07A-B2</option>
+          <option value="M08">M08</option>
+          <option value="M09A">M09A</option>
+          <option value="M10">M10</option>
+          <option value="M10-DGCA">M10-DGCA</option>
+          <option value="M10-EASA">M10-EASA</option>
+          <option value="M10-GCAA">M10-GCAA</option>
+          <option value="M11A">M11A</option>
+          <option value="M13">M13</option>
+          <option value="M13-Part1">M13-Part1</option>
+          <option value="M13-Part2">M13-Part2</option>
+          <option value="M14">M14</option>
+          <option value="M15">M15</option>
+          <option value="M17A">M17A</option></select
+        ><br /><br />
+
+        <button type="submit" id="addXmnee-btn" class="addXmnee-btn">
+          SEARCH
+        </button>
+
+        <button type="reset">RESET</button>
+        <button
+          type="submit"
+          id="logout-btn"
+          class="logout-btn"
+          formaction="/dashboard/logout"
+          formmethod="GET"
+        >
+          LOG OUT
+        </button>
+      </form>
+    </div>
+    <div id="srchDate" name="srchDate" class="srchDate">
+      <form action="/dashboard/srchDate" method="POST">
+        <h3>Search by DATE</h3>
+
+        <label for="XmneeSrchStart">Date From:</label><br />
+        <input type="date" id="XmneeSrchStart" name="srchStart" /><br /><br />
+        <label for="XmneeSrchEnd">Date To:</label><br />
+        <input type="date" id="XmneeSrchEnd" name="srchEnd" /><br /><br />
+
+        <button
+          type="submit"
+          id="srchEditExaminee-btn"
+          class="srchEditExaminee-btn"
+        >
+          SEARCH
+        </button>
+
+        <button type="reset">RESET</button>
+        <button
+          type="submit"
+          id="logout-btn"
+          class="logout-btn"
+          formaction="/dashboard/logout"
+          formmethod="GET"
+        >
+          LOG OUT
+        </button>
+      </form>
+    </div>
+    <div id="reviewValidate" name="reviewValidate" class="reviewValidate">
+      <form action="/dashboard/reviewValidate" method="POST">
+        <h3>Review and Validate Exams</h3>
+
+        <label for="schedName">Schedule Name:</label><br />
+        <input type="text" id="checkExam" name="checkExam" /><br /><br />
+        <br /><br />
+
+        <button type="submit" id="reviewsrch-btn" class="reviewsrch-btn">
+          SEARCH
+        </button>
+
+        <button type="reset">RESET</button>
+        <button
+          type="submit"
+          id="logout-btn"
+          class="logout-btn"
+          formaction="/dashboard/logout"
+          formmethod="GET"
+        >
+          LOG OUT
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

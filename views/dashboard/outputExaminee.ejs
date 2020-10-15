@@ -1,0 +1,495 @@
+<div class="dashContainer">
+  <div class="mainSide">
+    <br /><br />
+    <div id="outputExaminee" name="outputExaminee" class="outputExaminee">
+      <form action="/" method="GET">
+        <button
+          type="submit"
+          id="outputExaminee-btn"
+          class="outputExaminee-btn"
+        >
+          BACK TO DASHBOARD
+        </button>
+        <button
+          type="submit"
+          id="logout-btn"
+          class="logout-btn"
+          formaction="/dashboard/logout"
+          formmethod="GET"
+        >
+          LOG OUT
+        </button>
+      </form>
+    </div>
+    <br /><br />
+
+    <% if (notification) { %> <%- notification %> <% } else {%> <% if (status ==
+    'searchExaminee') { %>
+
+    <table>
+      <tr
+        style="
+          background-color: antiquewhite;
+          font-weight: bold;
+          text-align: center;
+        "
+      >
+        <th>No.</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ModuleID</th>
+        <th>ExamType</th>
+        <th>Paper</th>
+        <th>ExamDate</th>
+        <th>Score %</th>
+        <th>Remark1</th>
+        <th>Remark2</th>
+        <th>Scan</th>
+        <th>1stCheck</th>
+        <th>2ndCheck</th>
+        <th>SchedName</th>
+      </tr>
+
+      <% for (var i = 0; i < examineeList.length; i++) { %> <% if(i > 0){ %> <%
+      if(examineeList[i].v_examineeID == examineeList[i-1].v_examineeID) { %> <%
+      if(examineeList[i].v_moduleID == examineeList[i-1].v_moduleID) { %>
+
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- examineeList[i].v_examineeID %></td>
+        <td><%- examineeList[i].v_details %></td>
+        <td><%- examineeList[i].v_moduleID %></td>
+        <td style="text-align: center"><%- examineeList[i].v_examType %></td>
+        <td style="text-align: center"><%- examineeList[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(examineeList[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(examineeList[i].v_score) %>
+        </td>
+        <td><%- examineeList[i].v_remarks1 %></td>
+        <td><%- examineeList[i].v_remarks2 %></td>
+        <td><%- examineeList[i].v_scan %></td>
+        <td><%- examineeList[i].v_checkedBy %></td>
+        <td><%- examineeList[i].v_checkedAgainBy %></td>
+        <td><%- examineeList[i].v_schedulename %></td>
+      </tr>
+      <% }else{ %>
+      <tr style="background-color: rgb(100, 15, 4); height: 5px; font-size: 0">
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+        <td style="height: 5px; font-size: 0; padding: 0px"></td>
+      </tr>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- examineeList[i].v_examineeID %></td>
+        <td><%- examineeList[i].v_details %></td>
+        <td><%- examineeList[i].v_moduleID %></td>
+        <td style="text-align: center"><%- examineeList[i].v_examType %></td>
+        <td style="text-align: center"><%- examineeList[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(examineeList[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(examineeList[i].v_score) %>
+        </td>
+        <td><%- examineeList[i].v_remarks1 %></td>
+        <td><%- examineeList[i].v_remarks2 %></td>
+        <td><%- examineeList[i].v_scan %></td>
+        <td><%- examineeList[i].v_checkedBy %></td>
+        <td><%- examineeList[i].v_checkedAgainBy %></td>
+        <td><%- examineeList[i].v_schedulename %></td>
+      </tr>
+
+      <% } %> <% } else { %>
+      <tr style="background-color: rgb(145, 140, 140); height: 30px">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- examineeList[i].v_examineeID %></td>
+        <td><%- examineeList[i].v_details %></td>
+        <td><%- examineeList[i].v_moduleID %></td>
+        <td style="text-align: center"><%- examineeList[i].v_examType %></td>
+        <td style="text-align: center"><%- examineeList[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(examineeList[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(examineeList[i].v_score) %>
+        </td>
+        <td><%- examineeList[i].v_remarks1 %></td>
+        <td><%- examineeList[i].v_remarks2 %></td>
+        <td><%- examineeList[i].v_scan %></td>
+        <td><%- examineeList[i].v_checkedBy %></td>
+        <td><%- examineeList[i].v_checkedAgainBy %></td>
+        <td><%- examineeList[i].v_schedulename %></td>
+      </tr>
+      <% } %> <% } else { %>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- examineeList[i].v_examineeID %></td>
+        <td><%- examineeList[i].v_details %></td>
+        <td><%- examineeList[i].v_moduleID %></td>
+        <td style="text-align: center"><%- examineeList[i].v_examType %></td>
+        <td style="text-align: center"><%- examineeList[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(examineeList[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(examineeList[i].v_score) %>
+        </td>
+        <td><%- examineeList[i].v_remarks1 %></td>
+        <td><%- examineeList[i].v_remarks2 %></td>
+        <td><%- examineeList[i].v_scan %></td>
+        <td><%- examineeList[i].v_checkedBy %></td>
+        <td><%- examineeList[i].v_checkedAgainBy %></td>
+        <td><%- examineeList[i].v_schedulename %></td>
+      </tr>
+      <% } %> <% }} %>
+    </table>
+
+    <% if (status == 'searchModule') { %>
+
+    <table>
+      <tr
+        style="
+          background-color: antiquewhite;
+          font-weight: bold;
+          text-align: center;
+        "
+      >
+        <th>No.</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ModuleID</th>
+        <th>ExamType</th>
+        <th>Paper</th>
+        <th>ExamDate</th>
+        <th>Score %</th>
+        <th>Remark1</th>
+        <th>Remark2</th>
+        <th>Scan</th>
+        <th>1stCheck</th>
+        <th>2ndCheck</th>
+        <th>SchedName</th>
+      </tr>
+
+      <% for (var i = 0; i < examineeList.length; i++) { %> <% if(i > 0){ %> <%
+      if(examineeList[i].v_examineeID == examineeList[i-1].v_examineeID) { %>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- examineeList[i].v_examineeID %></td>
+        <td><%- examineeList[i].v_details %></td>
+        <td><%- examineeList[i].v_moduleID %></td>
+        <td style="text-align: center"><%- examineeList[i].v_examType %></td>
+        <td style="text-align: center"><%- examineeList[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(examineeList[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(examineeList[i].v_score) %>
+        </td>
+        <td><%- examineeList[i].v_remarks1 %></td>
+        <td><%- examineeList[i].v_remarks2 %></td>
+        <td><%- examineeList[i].v_scan %></td>
+        <td><%- examineeList[i].v_checkedBy %></td>
+        <td><%- examineeList[i].v_checkedAgainBy %></td>
+        <td><%- examineeList[i].v_schedulename %></td>
+      </tr>
+      <% } else { %>
+      <tr style="background-color: rgb(145, 140, 140)">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- examineeList[i].v_examineeID %></td>
+        <td><%- examineeList[i].v_details %></td>
+        <td><%- examineeList[i].v_moduleID %></td>
+        <td style="text-align: center"><%- examineeList[i].v_examType %></td>
+        <td style="text-align: center"><%- examineeList[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(examineeList[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(examineeList[i].v_score) %>
+        </td>
+        <td><%- examineeList[i].v_remarks1 %></td>
+        <td><%- examineeList[i].v_remarks2 %></td>
+        <td><%- examineeList[i].v_scan %></td>
+        <td><%- examineeList[i].v_checkedBy %></td>
+        <td><%- examineeList[i].v_checkedAgainBy %></td>
+        <td><%- examineeList[i].v_schedulename %></td>
+      </tr>
+      <% } %> <% } else { %>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- examineeList[i].v_examineeID %></td>
+        <td><%- examineeList[i].v_details %></td>
+        <td><%- examineeList[i].v_moduleID %></td>
+        <td style="text-align: center"><%- examineeList[i].v_examType %></td>
+        <td style="text-align: center"><%- examineeList[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(examineeList[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(examineeList[i].v_score) %>
+        </td>
+        <td><%- examineeList[i].v_remarks1 %></td>
+        <td><%- examineeList[i].v_remarks2 %></td>
+        <td><%- examineeList[i].v_scan %></td>
+        <td><%- examineeList[i].v_checkedBy %></td>
+        <td><%- examineeList[i].v_checkedAgainBy %></td>
+        <td><%- examineeList[i].v_schedulename %></td>
+      </tr>
+      <% } %> <% }} %>
+    </table>
+
+    <% if (status == 'searchDate') { %>
+    <table>
+      <tr>
+        <th>No.</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ModuleID</th>
+        <th>ExamType</th>
+        <th>Paper</th>
+        <th>ExamDate</th>
+        <th>Score %</th>
+        <th>Remark1</th>
+        <th>Remark2</th>
+        <th>Scan</th>
+        <th>1stCheck</th>
+        <th>2ndCheck</th>
+        <th>SchedName</th>
+      </tr>
+
+      <% for (var i = 0; i < dateSearch.length; i++) { %> <% if(i > 0){ %> <%
+      if(dateSearch[i].v_schedulename == dateSearch[i-1].v_schedulename) { %>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- dateSearch[i].v_examineeID %></td>
+        <td><%- dateSearch[i].v_details %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_moduleID %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_examType %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(dateSearch[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(dateSearch[i].v_score) %>
+        </td>
+        <td><%- dateSearch[i].v_remarks1 %></td>
+        <td><%- dateSearch[i].v_remarks2 %></td>
+        <td><%- dateSearch[i].v_scan %></td>
+        <td><%- dateSearch[i].v_checkedBy %></td>
+        <td><%- dateSearch[i].v_checkedAgainBy %></td>
+        <td><%- dateSearch[i].v_schedulename %></td>
+      </tr>
+      <% } else { %>
+      <tr style="background-color: rgb(179, 176, 176)">
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- dateSearch[i].v_examineeID %></td>
+        <td><%- dateSearch[i].v_details %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_moduleID %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_examType %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(dateSearch[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(dateSearch[i].v_score) %>
+        </td>
+        <td><%- dateSearch[i].v_remarks1 %></td>
+        <td><%- dateSearch[i].v_remarks2 %></td>
+        <td><%- dateSearch[i].v_scan %></td>
+        <td><%- dateSearch[i].v_checkedBy %></td>
+        <td><%- dateSearch[i].v_checkedAgainBy %></td>
+        <td><%- dateSearch[i].v_schedulename %></td>
+      </tr>
+      <% } %> <% } else { %>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- dateSearch[i].v_examineeID %></td>
+        <td><%- dateSearch[i].v_details %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_moduleID %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_examType %></td>
+        <td style="text-align: center"><%- dateSearch[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(dateSearch[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center">
+          <%- Math.round(dateSearch[i].v_score) %>
+        </td>
+        <td><%- dateSearch[i].v_remarks1 %></td>
+        <td><%- dateSearch[i].v_remarks2 %></td>
+        <td><%- dateSearch[i].v_scan %></td>
+        <td><%- dateSearch[i].v_checkedBy %></td>
+        <td><%- dateSearch[i].v_checkedAgainBy %></td>
+        <td><%- dateSearch[i].v_schedulename %></td>
+      </tr>
+      <% } %> <% }} %>
+    </table>
+
+    <% if (status == 'reviewValidate') { %>
+    <table>
+      <tr>
+        <th>No.</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ModuleID</th>
+        <th>ExamType</th>
+        <th>Paper</th>
+        <th>ExamDate</th>
+        <th>Score %</th>
+        <th>Remark1</th>
+        <th>Remark2</th>
+        <th>Scan</th>
+        <th>1stCheck</th>
+        <th>2ndCheck</th>
+        <th>SchedName</th>
+      </tr>
+
+      <% for (var i = 0; i < review.length; i++) { %>
+      <tr>
+        <td><%- i+1 %>.</td>
+        <td><%- review[i].v_examineeID %></td>
+        <td><%- review[i].v_details %></td>
+        <td style="text-align: center"><%- review[i].v_moduleID %></td>
+        <td style="text-align: center"><%- review[i].v_examType %></td>
+        <td style="text-align: center"><%- review[i].v_paperID %></td>
+        <td>
+          <% var d = new Date(review[i].v_examDate); var months =
+          ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+          %><%- d.getFullYear() %> <%- months[d.getMonth()] %> <%- d.getDate()
+          %>
+        </td>
+        <td style="text-align: center"><%- Math.round(review[i].v_score) %></td>
+        <td><%- review[i].v_remarks1 %></td>
+        <td><%- review[i].v_remarks2 %></td>
+        <td style="text-align: center">
+          <a href="<%- review[i].v_scan %>" download>scan</a>
+        </td>
+        <td style="text-align: center">
+          <%- review[i].v_checkedBy %> : <% if(review[i].v_checkedBy) {var d2 =
+          new Date(review[i].v_checkedDate); %><%- d2.getFullYear() %> <%-
+          months[d2.getMonth()] %> <%- d2.getDate() %> <% } %>
+        </td>
+        <td style="text-align: center">
+          <%- review[i].v_checkedAgainBy %> : <% if(review[i].v_checkedAgainBy)
+          {var d3 = new Date(review[i].v_checkedAgainDate); %><%-
+          d3.getFullYear() %> <%- months[d3.getMonth()] %> <%- d3.getDate() %>
+          <% } %>
+        </td>
+        <td><%- review[i].v_schedulename %></td>
+      </tr>
+      <% } %>
+    </table>
+
+    <form action="/dashboard/updateChecked" method="POST">
+      <br />
+      <h3 style="color: red">Click below to VALIDATE the EXAM RECORDS</h3>
+      <label for="schedValidate">Schedule Name to Validate:</label><br />
+      <input
+        type="text"
+        id="schedValidate"
+        name="schedValidate"
+        value="<%- review[0].v_schedulename %>"
+        readonly
+        style="font-weight: bold"
+      /><br /><br />
+      <button
+        type="submit"
+        id="validateExamRecords-btn"
+        class="validateExamRecords-btn"
+        style="font-weight: bold"
+      >
+        VALIDATE
+      </button>
+    </form>
+    <% } %> <% } %>
+  </div>
+</div>

@@ -230,7 +230,15 @@
         <td style="text-align: center">
           <%- Math.round(examineeList[i].v_score) %>
         </td>
+
+        <% if(examineeList[i].v_remarks1 == "PASS") {%>
         <td><%- examineeList[i].v_remarks1 %></td>
+        <% }else{ %>
+        <td style="background-color: coral">
+          <%- examineeList[i].v_remarks1 %>
+        </td>
+        <% } %>
+
         <td><%- examineeList[i].v_remarks2 %></td>
         <td><%- examineeList[i].v_scan %></td>
         <td><%- examineeList[i].v_checkedBy %></td>

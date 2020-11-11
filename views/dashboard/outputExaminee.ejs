@@ -232,9 +232,9 @@
         </td>
 
         <% if(examineeList[i].v_remarks1 == "PASS") {%>
-        <td><%- examineeList[i].v_remarks1 %></td>
+        <td style="text-align: center"><%- examineeList[i].v_remarks1 %></td>
         <% }else{ %>
-        <td style="background-color: coral">
+        <td style="background-color: coral; text-align: center">
           <%- examineeList[i].v_remarks1 %>
         </td>
         <% } %>
@@ -278,7 +278,15 @@
         <td style="text-align: center">
           <%- Math.round(examineeList[i].v_score) %>
         </td>
-        <td><%- examineeList[i].v_remarks1 %></td>
+
+        <% if(examineeList[i].v_remarks1 == "PASS") {%>
+        <td style="text-align: center"><%- examineeList[i].v_remarks1 %></td>
+        <% }else{ %>
+        <td style="background-color: coral; text-align: center">
+          <%- examineeList[i].v_remarks1 %>
+        </td>
+        <% } %>
+
         <td><%- examineeList[i].v_remarks2 %></td>
         <td><%- examineeList[i].v_scan %></td>
         <td><%- examineeList[i].v_checkedBy %></td>
@@ -302,7 +310,15 @@
         <td style="text-align: center">
           <%- Math.round(examineeList[i].v_score) %>
         </td>
-        <td><%- examineeList[i].v_remarks1 %></td>
+
+        <% if(examineeList[i].v_remarks1 == "PASS") {%>
+        <td style="text-align: center"><%- examineeList[i].v_remarks1 %></td>
+        <% }else{ %>
+        <td style="background-color: coral; text-align: center">
+          <%- examineeList[i].v_remarks1 %>
+        </td>
+        <% } %>
+
         <td><%- examineeList[i].v_remarks2 %></td>
         <td><%- examineeList[i].v_scan %></td>
         <td><%- examineeList[i].v_checkedBy %></td>
@@ -349,7 +365,15 @@
         <td style="text-align: center">
           <%- Math.round(dateSearch[i].v_score) %>
         </td>
-        <td><%- dateSearch[i].v_remarks1 %></td>
+
+        <% if(dateSearch[i].v_remarks1 == "PASS") {%>
+        <td style="text-align: center"><%- dateSearch[i].v_remarks1 %></td>
+        <% }else{ %>
+        <td style="background-color: coral; text-align: center">
+          <%- dateSearch[i].v_remarks1 %>
+        </td>
+        <% } %>
+
         <td><%- dateSearch[i].v_remarks2 %></td>
         <td><%- dateSearch[i].v_scan %></td>
         <td><%- dateSearch[i].v_checkedBy %></td>
@@ -389,7 +413,15 @@
         <td style="text-align: center">
           <%- Math.round(dateSearch[i].v_score) %>
         </td>
-        <td><%- dateSearch[i].v_remarks1 %></td>
+
+        <% if(dateSearch[i].v_remarks1 == "PASS") {%>
+        <td style="text-align: center"><%- dateSearch[i].v_remarks1 %></td>
+        <% }else{ %>
+        <td style="background-color: coral; text-align: center">
+          <%- dateSearch[i].v_remarks1 %>
+        </td>
+        <% } %>
+
         <td><%- dateSearch[i].v_remarks2 %></td>
         <td><%- dateSearch[i].v_scan %></td>
         <td><%- dateSearch[i].v_checkedBy %></td>
@@ -413,7 +445,15 @@
         <td style="text-align: center">
           <%- Math.round(dateSearch[i].v_score) %>
         </td>
-        <td><%- dateSearch[i].v_remarks1 %></td>
+
+        <% if(dateSearch[i].v_remarks1 == "PASS") {%>
+        <td style="text-align: center"><%- dateSearch[i].v_remarks1 %></td>
+        <% }else{ %>
+        <td style="background-color: coral; text-align: center">
+          <%- dateSearch[i].v_remarks1 %>
+        </td>
+        <% } %>
+
         <td><%- dateSearch[i].v_remarks2 %></td>
         <td><%- dateSearch[i].v_scan %></td>
         <td><%- dateSearch[i].v_checkedBy %></td>

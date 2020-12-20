@@ -115,7 +115,7 @@ router.post('/srchDate', function (req, res) {
   let srchEnd = req.body.srchEnd;
 
   var q =
-    'SELECT t_results.v_resultID, t_results.v_schedulename, t_results.v_examineeID, t_results.v_moduleID, t_results.v_paperID, t_results.v_examType, t_results.v_examDate, t_results.v_examDateBatch, t_results.v_correctAnswer, t_results.v_score, t_results.v_remarks1, t_results.v_remarks2, t_results.v_scan, t_results.v_checkedBy, t_results.v_checkedDate, t_results.v_checkedAgainBy, t_results.v_checkedAgainDate, t_examinees.v_details FROM t_results INNER JOIN t_examinees ON t_results.v_examineeID = t_examinees.v_examineeID WHERE t_results.v_examDate BETWEEN ? AND ? ORDER BY t_results.v_examDate ASC, t_results.v_moduleID ASC, t_results.v_schedulename ASC, t_results.v_examineeID ASC';
+    'SELECT t_results.v_resultID, t_results.v_schedulename, t_results.v_examineeID, t_results.v_moduleID, t_results.v_paperID, t_results.v_examType, t_results.v_examDate, t_results.v_examDateBatch, t_results.v_correctAnswer, t_results.v_score, t_results.v_remarks1, t_results.v_remarks2, t_results.v_scan, t_results.v_checkedBy, t_results.v_checkedDate, t_results.v_checkedAgainBy, t_results.v_checkedAgainDate, t_examinees.v_details FROM t_results INNER JOIN t_examinees ON t_results.v_examineeID = t_examinees.v_examineeID WHERE t_results.v_examDate BETWEEN ? AND ? ORDER BY t_results.v_examDate ASC, t_results.v_moduleID ASC, t_results.v_schedulename ASC, t_results.v_examineeID ASC, t_results.v_examType';
   connection.query(q, [srchStart, srchEnd], function (error, results, fields) {
     req.session.dateSearch = results;
     if (error) {

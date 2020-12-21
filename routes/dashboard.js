@@ -151,7 +151,7 @@ router.post("/reviewValidate", function (req, res) {
   if (!sessionUsr) {
     res.redirect("/");
   }
-  if (v_adminID != "w.fort") {
+  if (sessionUsr[0].v_adminID != "w.fort") {
     res.redirect("/");
   }
   let checkExam = req.body.checkExam;

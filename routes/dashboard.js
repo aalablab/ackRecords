@@ -151,7 +151,10 @@ router.post("/reviewValidate", function (req, res) {
   if (!sessionUsr) {
     res.redirect("/");
   }
-  if (sessionUsr[0].v_adminID != "w.fort") {
+  if (
+    sessionUsr[0].v_adminID != "w.fort" &&
+    sessionUsr[0].v_adminID != "Liam"
+  ) {
     res.redirect("/");
   }
   let checkExam = req.body.checkExam;

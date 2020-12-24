@@ -1,19 +1,14 @@
 <div class="dashContainer">
   <div class="mainSide">
-    <br /><br />
     <div id="outputExaminee" name="outputExaminee" class="outputExaminee">
       <form action="/" method="GET">
-        <button
-          type="submit"
-          id="outputExaminee-btn"
-          class="outputExaminee-btn"
-        >
+        <button type="submit" id="outputExaminee-btn" class="usualbtn">
           BACK TO DASHBOARD
         </button>
         <button
           type="submit"
           id="logout-btn"
-          class="logout-btn"
+          class="usualbtn"
           formaction="/dashboard/logout"
           formmethod="GET"
         >
@@ -21,7 +16,7 @@
         </button>
       </form>
     </div>
-    <br /><br />
+    <br />
 
     <% if (notification) { %> <%- notification %> <% } else {%> <% if (status ==
     'searchExaminee') { %>

@@ -133,3 +133,24 @@ h2 {
   margin-top: 0px;
   margin-bottom: 10px;
 }
+
+.usualbtn {
+  font-family: sans-serif;
+  font-size: 15px;
+  padding: 5px 30px;
+  text-align: center;
+  text-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.5);
+  color: #005596;
+  font-weight: bold;
+  border-radius: 5px;
+  border-color: rgb(230, 230, 230);
+  background-color: rgb(252, 214, 183);
+}
+
+.outputExaminee {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

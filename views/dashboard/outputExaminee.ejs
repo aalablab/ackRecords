@@ -492,7 +492,15 @@
           %>
         </td>
         <td style="text-align: center"><%- Math.round(review[i].v_score) %></td>
-        <td><%- review[i].v_remarks1 %></td>
+
+        <% if(review[i].v_remarks1 == "PASS") {%>
+        <td style="text-align: center"><%- review[i].v_remarks1 %></td>
+        <% }else{ %>
+        <td style="background-color: coral; text-align: center">
+          <%- review[i].v_remarks1 %>
+        </td>
+        <% } %>
+
         <td><%- review[i].v_remarks2 %></td>
         <td style="text-align: center">
           <a href="<%- review[i].v_scan %>" download>scan</a>

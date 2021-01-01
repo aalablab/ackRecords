@@ -60,7 +60,17 @@ body {
 
 /* ===================================== DASHBOARD ===================================== */
 /* ===================================================================================================== */
-.loginContainer,
+.loginContainer {
+  padding: 10px;
+  display: flex;
+  min-height: 75vh;
+  /* background-color: yellow; */
+}
+.loginForm {
+  padding: 10px;
+
+  /* background-color: yellow; */
+}
 .dashContainer {
   padding: 10px;
   /* display: flex; */
@@ -69,7 +79,7 @@ body {
 }
 
 .emptySide {
-  flex: 13%; 
+  flex: 13%;
   padding-left: 10px;
   /* background-color: tomato; */
 }
@@ -85,7 +95,7 @@ ul {
 }
 
 .mainSide {
-  flex: 87%; 
+  flex: 87%;
   padding: 10px;
   flex-direction: column;
   /* background-color: violet; */

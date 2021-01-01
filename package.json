@@ -2,7 +2,7 @@
   "name": "ex05records",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "devStart": "nodemon server.js"

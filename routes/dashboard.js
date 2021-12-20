@@ -14,6 +14,14 @@ connection.on("error", function (err) {
 });
 const ObjectsToCsv = require("objects-to-csv");
 
+const schedule = require("node-schedule");
+const archiveFile = schedule.scheduleJob("15 * * * *", function () {
+  console.log(
+    "The answer to life, the universe, and everything!",
+    new Date().toString()
+  );
+});
+
 //Show examiner dashboard.
 router.get("/", function (req, res) {
   let sessionUsr = req.session.user;

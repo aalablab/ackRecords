@@ -532,7 +532,9 @@
 
         <td><%- review[i].v_remarks2 %></td>
         <td style="text-align: center">
-          <a href="<%- review[i].v_scan %>" download>scan</a>
+          <a href="#0" onclick="window.open('<%- review[i].v_scan %>');"
+            >scan</a
+          >
         </td>
         <td style="text-align: center">
           <%- review[i].v_checkedBy %> : <% if(review[i].v_checkedBy) {var d2 =
